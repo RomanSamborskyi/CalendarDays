@@ -8,8 +8,8 @@
 import UIKit
 
 
-public struct CalendarDays {
-    let id: UUID = UUID()
+public struct CalendarDays: Identifiable {
+    public let id: UUID = UUID()
     let day: Int
     let date: Date
 }
