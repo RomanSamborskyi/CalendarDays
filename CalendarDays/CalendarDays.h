@@ -8,7 +8,7 @@
 #import <Foundation/Foundation.h>
 
 //! Project version number for CalendarDays.
-FOUNDATION_EXPORT double CalendarDaysVersionNumber;
+FOUNDATION_EXPORT double CalendarDaysVersionNumber; 
 
 //! Project version string for CalendarDays.
 FOUNDATION_EXPORT const unsigned char CalendarDaysVersionString[];
