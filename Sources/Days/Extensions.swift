@@ -21,7 +21,7 @@ public extension Date {
         
         var endDateComponents = DateComponents()
         endDateComponents.month = 1
-        endDateComponents.day = nil
+        endDateComponents.day = -1
         let endDate = calendar.date(byAdding: endDateComponents, to: startDate)!
         var dates: [Date] = []
                     var currentDate = startDate
