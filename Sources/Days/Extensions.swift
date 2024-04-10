@@ -13,27 +13,22 @@ public extension Date {
         let calendar = Calendar.current
         let currentMonth = calendar.component(.month, from: self)
         let currentYear = calendar.component(.year, from: self)
-        var startComponents = DateComponents()
+        var startDateComponents = DateComponents()
+        startDateComponents.year = currentYear
+        startDateComponents.month = currentMonth
+        startDateComponents.day = 1
+        let startDate = calendar.date(from: startDateComponents)!
         
-        startComponents.year = currentYear
-        startComponents.month = currentMonth
-        startComponents.day = 1
-        let startDate = calendar.date(from: startComponents)!
-        
-        var endComponents = DateComponents()
-        
-        endComponents.month = currentMonth
-        endComponents.day = -1
-        
-        let endDate = calendar.date(byAdding: endComponents, to: startDate)!
-        
+        var endDateComponents = DateComponents()
+        endDateComponents.month = 1
+        endDateComponents.day = -1
+        let endDate = calendar.date(byAdding: endDateComponents, to: startDate)!
         var dates: [Date] = []
-        var currentDate = startDate
-        
-        while currentDate <= endDate {
-            dates.append(currentDate)
-            currentDate = calendar.date(byAdding: .day, value: 1, to: currentDate)!
+                    var currentDate = startDate
+                    while currentDate <= endDate {
+            dates.append (currentDate)
+                        currentDate = calendar.date(byAdding: .day, value: 1, to: currentDate)!
         }
-        return dates
+         return dates
     }
 }
