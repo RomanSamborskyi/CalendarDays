@@ -10,6 +10,6 @@ import UIKit
 
 public struct CalendarDays: Identifiable {
     public let id: UUID = UUID()
-    public let day: Int
+    public let day: Int?
     public let date: Date
 }

@@ -30,11 +30,11 @@ public class CalendaDaysComponent {
         let firstDayOfTheWeek = currentCalendar.component(.weekday, from: monthsDays.first?.date ?? Date())
         if firstDayOfTheWeek > 1 {
             for _ in 0..<firstDayOfTheWeek - 2 {
-                monthsDays.insert(CalendarDays(day: -1, date: Date()), at: 0)
+                monthsDays.insert(CalendarDays(day: nil, date: Date()), at: 0)
             }
         } else if firstDayOfTheWeek <= 1 {
             for _ in -7..<firstDayOfTheWeek - 2 {
-                monthsDays.insert(CalendarDays(day: -1, date: Date()), at: 0)
+                monthsDays.insert(CalendarDays(day: nil, date: Date()), at: 0)
             }
         }
         
