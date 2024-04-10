@@ -13,7 +13,17 @@ public class CalendaDaysComponent {
     public static func fetchDays(for month: Date) -> [CalendarDays] {
         let currentCalendar = Calendar.current
         
-        var monthsDays: [CalendarDays] = month.daysOfMonth().map {
+        let dateFormatter: DateFormatter = {
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "LLLL yyyy"
+            return dateFormatter
+        }()
+        
+        let currentMonth = dateFormatter.date(from: dateFormatter.string(from: month))
+        
+        let returnedMonth = currentCalendar.date(bySetting: .day, value: 1, of: currentMonth!)
+        
+        var monthsDays: [CalendarDays] = returnedMonth!.daysOfMonth().map {
             CalendarDays(day: currentCalendar.component(.day, from: $0), date: $0)
         }
         
