@@ -8,7 +8,7 @@
 import UIKit
 
 
-public struct CalendarDays: Identifiable {
+public struct CalendarDays: Identifiable, Hashable {
     public let id: UUID = UUID()
     public let day: Int
     public let date: Date
