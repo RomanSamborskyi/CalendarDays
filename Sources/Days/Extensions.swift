@@ -5,7 +5,9 @@
 //  Created by Roman Samborskyi on 10.04.2024.
 //
 
-import Foundation
+import UIKit
+import SwiftUI
+
 
 
 public extension Date {
@@ -30,5 +32,12 @@ public extension Date {
                         currentDate = calendar.date(byAdding: .day, value: 1, to: currentDate)!
         }
          return dates
+    }
+}
+
+@available(iOS 13.0, *)
+public extension View {
+    static func highlightCurrentDay() {
+        
     }
 }
