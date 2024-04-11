@@ -37,7 +37,7 @@ public extension Date {
 
 @available(iOS 13.0, *)
 public extension View {
-    static func highlightCurrentDay() {
+    func highlightCurrentDay() {
         
     }
 }
