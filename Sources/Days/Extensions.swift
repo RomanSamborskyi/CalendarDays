@@ -34,10 +34,3 @@ public extension Date {
          return dates
     }
 }
-
-@available(iOS 13.0, *)
-public extension View {
-    func highlightCurrentDay() {
-        
-    }
-}
